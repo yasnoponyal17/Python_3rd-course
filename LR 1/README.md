@@ -85,6 +85,6 @@ if url_hook not in sys.path_hooks:
 print("Хук зарегистрирован! Текущие path_hooks:", sys.path_hooks)
 ```
 ## Скриншоты
-=======
-##
->>>>>>> Stashed changes
+![1](images/1.png)
+![2](images/2.png)
+![3](images/3.png)
