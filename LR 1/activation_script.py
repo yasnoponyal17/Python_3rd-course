@@ -4,7 +4,6 @@ import requests
 from importlib.abc import PathEntryFinder, Loader
 from importlib.util import spec_from_loader
 
-
 class URLLoader(Loader):
     def create_module(self, spec):
         return None
