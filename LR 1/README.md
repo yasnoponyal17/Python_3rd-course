@@ -22,11 +22,42 @@ sys.path.append("http://localhost:8000")
 9. Переписать содержимое функции url_hook, класса URLLoader с помощью модуля requests (см. комменты).
 10. Реализовать обработку исключения в ситуации, когда хост (где лежит модуль) недоступен.
 11. Реализовать загрузку пакета, разобравшись с аргументами функции spec_from_loader и внутренним устройством импорта пакетов.
+## Структура проекта
+```
+LR 1/
+├── activation_script.py       
+├── README.md                  
+└── rootserver/                
+    ├── myremotemodule.py     
+    └── mypackage/             
+        ├── __init__.py        
+        ├── module1.py         
+        └── subpackage/       
+            ├── __init__.py    
+            └── module2.py     
+```
+## Описание файлов
+| Название | Описание |
+| :--- | :---: | 
+| activation_script.py | Реализация удаленного импорта | 
+| rootserver/ | Каталог для запуска локального HTTP-сервера | 
+| myremotemodule.py | Модуль для проверки удаленного импорта | 
+| mypackage/ | Пакет, размещенный на HTTP-сервере | 
+| mypackage/\_\_init\_\_.py | Инициализация пакета и импорт функции hello() | 
+| mypackage/module1.py | Модуль с функцией hello() | 
+| mypackage/subpackage/ | Вложенный пакет | 
+| subpackage/\_\_init\_\_.py | Инициализация вложенного пакета | 
+| subpackage/module2.py | Модуль с функцией hello2() | 
 
 ## Скриншоты
 ### Шаги 1-7
 ![1](images/1.png)
 ![2](images/2.png)
 ![3](images/3.png)
+### Шаг 8
+![replit2](images/replit2.png)
+![replit1](images/replit1.png)
 ### Шаг 10
 ![4](images/4.png)
+### Шаг 11
+![step11](images/step11.png)
