@@ -29,7 +29,7 @@ class RecommendationService(recommendations_pb2_grpc.RecommendationsServicer):
         if books is None:
             context.abort(grpc.StatusCode.NOT_FOUND, f"Category {request.category} not found")
             
-        # Фильтрация прочитанных книг (Задание 3)
+        # Задание 3
         excluded = set(request.exclude_ids)
         available_books = [b for b in books if b.id not in excluded]
         

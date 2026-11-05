@@ -20,11 +20,10 @@ def test_api_returns_recommendations():
     assert len(books) == 2
     assert set(books[0]) == {"id", "title"}
 
-# Решение задания 5: тест, проверяющий ответ 400 при ошибке INVALID_ARGUMENT
+# Задание 5
 def test_api_returns_400_for_invalid_argument():
-    # Передаем неизвестную категорию, чтобы спровоцировать INVALID_ARGUMENT от gRPC
     url = f"{BASE_URL}/api/v1/recommendations?user_id=1&category=unknown_category&max_results=2"
     try:
         urlopen(url, timeout=5)
     except HTTPError as error:
-        assert error.code == 422 # FastAPI перехватит неизвестную категорию на уровне валидации Pydantic
+        assert error.code == 422

@@ -49,7 +49,7 @@ async def get_recommendations(
 ):
     return await fetch_recommendations(request.app.state.recommendations, user_id, category, max_results)
 
-# Задание 5: Добавлен параметр category
+# Задание 5
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def homepage(request: Request, category: CategoryName = "mystery"):
     books = await fetch_recommendations(request.app.state.recommendations, user_id=1, category=category, max_results=3)
